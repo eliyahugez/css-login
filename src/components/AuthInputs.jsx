@@ -22,9 +22,23 @@ const CustomInputControlers = styled.input`
   line-height: 1.5;
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    background-color: ${({ isValidInput }) => (isValidInput) ? '#f73f3f' : 'rgb(149, 175, 216)'};
+  background-color: ${({ isValidInput }) => (isValidInput) ? '#f39999' : 'rgb(149, 175, 216)'};
+  color: ${({ isValidInput }) => (isValidInput) ? 'red' : 'black'};
+  border: 1px solid ${({ isValidInput }) => (isValidInput ? '#f39999' : 'pink')};
+  `
 
-
+const CustomButtonControlers = styled.button`
+    padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #f0b322;
+  border-radius: 6px;
+  border: none;
+  &:hover {
+    background-color: #f0920e;
+}
   `
 //  background-color: #d1d5db;
 // color:rgb(149, 175, 216);   background-color: ${isValidInput}) => isValidInput ? '#d1d5db' : '#fed2d2'};
@@ -98,10 +112,10 @@ export default function AuthInputs() {
         </p>
       </CustomDivControlers>
       <div className="actions">
-        <button type="button" className="text-button">
+        <CustomButtonControlers type="button" className="text-button">
           Create a new account
-        </button>
-        <button className='button' onClick={handleLogin}>Sign In</button>
+        </CustomButtonControlers>
+        <CustomButtonControlers className='button' onClick={handleLogin}>Sign In</CustomButtonControlers>
       </div>
     </div>
   );

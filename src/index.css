@@ -90,7 +90,7 @@ button:focus {
   gap: 1rem;
 }
 
-.button {
+/* .button {
   padding: 1rem 2rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -99,7 +99,7 @@ button:focus {
   background-color: #f0b322;
   border-radius: 6px;
   border: none;
-}
+} */
 
 .button:hover {
   background-color: #f0920e;
