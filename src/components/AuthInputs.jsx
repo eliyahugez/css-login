@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { styled } from 'styled-components'
 import CustomButtonControlers from './Button.jsx';
 import CustomInputLable from './Input';
+import Button from './Button.jsx';
 
 const CustomDivControlers = styled.div`
  display: flex;
@@ -82,37 +83,12 @@ export default function AuthInputs() {
             handleLogin();
           }} />
 
-
-        {/* <p>
-          <CustomLabelControlers
-            // className={`label ${emailNotValid ? 'invalid' : ''}`}
-            isValidLabal={passwordNotValid}
-
-          >Password</CustomLabelControlers>
-          <CustomInputControlers
-            type="password"
-            isValidInput={passwordNotValid}
-
-            // className={passwordNotValid ? 'invalid' : undefined}
-            onChange={(event) => {
-              handleInputChange('password', event.target.value);
-              handleLogin();
-            }
-            }
-          />
-        </p> */}
-        {/* <CustomInputLable
-          isValidInput={emailNotValid}
-        />
-        <CustomInputLable
-          isValidInput={passwordNotValid}
-        /> */}
       </CustomDivControlers>
       <div className="actions">
-        <CustomButtonControlers type="button" className="text-button">
+        <Button type="button" >
           Create a new account
-        </CustomButtonControlers>
-        <CustomButtonControlers className='button' onClick={handleLogin}>Sign In</CustomButtonControlers>
+        </Button>
+        <Button className='button' onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   );
