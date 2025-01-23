@@ -63,9 +63,8 @@ export default function AuthInputs() {
 
 
   return (
-    <div id="auth-inputs">
-      <CustomDivControlers>
-
+    <div id="auth-inputs" className='w-full mx-auto max-w-sm p-8 rounded shadow-md bg-gradient-to-b from-stone-400 to-stone-700 ' >
+      <div className='flex flex-col gap-4 mb-4 ' >
         <CustomInputLable
           label="Email"
           type="email"
@@ -83,11 +82,12 @@ export default function AuthInputs() {
             handleLogin();
           }} />
 
-      </CustomDivControlers>
-      <div className="actions">
-        <Button type="button" >
+      </div>
+      <div className="flex gap-4 justify-end">
+        <botton type="button"
+          className='text-button hover:text-amber-400 cursor-pointer' >
           Create a new account
-        </Button>
+        </botton>
         <Button className='button' onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
