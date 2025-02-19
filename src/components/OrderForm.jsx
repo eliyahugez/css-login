@@ -3,6 +3,9 @@ import { CreditCardIcon, XIcon } from 'lucide-react';
 import LargeRedButton from './LargeRedButton';
 // import className from './classesName';
 import SubscriptionBenefits from './SubscriptionBenefits';
+import { VisaIcon, MasterCardIcon, AmericanExpressIcon, } from './CardSvg';
+// import { PaymentIcon } from 'react-native-payment-icons'
+// import VisaLogo from 'https://www.svgrepo.com/show/303634/visa-4-logo.svg';
 
 const OrderForm = ({ isActive, handleClick }) => {
   const [formData, setFormData] = useState({
@@ -148,10 +151,16 @@ const OrderForm = ({ isActive, handleClick }) => {
                     : 'bg-white border-2 border-gray-200'
                     }`}
                 >
-                  <CreditCardIcon
+                  <CreditCardIcon type="visa" format="flatRounded" width={100}
                     size={40}
                     className={`mx-auto mb-2 ${cardType === card ? 'text-blue-500' : 'text-gray-400'}`}
                   />
+                  {/* <VisaIcon />
+                  <MasterCardIcon />
+                  <AmericanExpressIcon /> */}
+                  {cardType === 'visa' && <VisaIcon />}
+                  {cardType === 'mastercard' && <MasterCardIcon />}
+                  {cardType === 'amex' && <AmericanExpressIcon />}
                   <span className={`text-sm ${cardType === card ? 'text-blue-500 font-medium' : 'text-gray-400'}`}>
                     {getCardDisplayName(card)}
                   </span>

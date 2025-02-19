@@ -34,26 +34,31 @@ const SubscriptionBenefits = ({ handleClick, isActive }) => {
         <img
           src="https://i.ibb.co/MxRKC8gD/2025-01-23-141609.png" // Replace with your logo
           alt="Logo"
-          className="h-3/5 rounded-lg w-auto"
+          className="max-h-[30dvh] rounded-lg w-auto"
         />
       </div>
 
       {/* Introduction Text */}
-      <p className="text-xl sm:text-2xl text-red-700  mb-8">
+      {/* <p className="text-xl sm:text-2xl text-red-700  mb-8">
         You’ll get all this with your subscription:
-      </p>
+      </p> */}
 
       <div className=" flex flex-col space-y-6 md:space-y-12 space-x-6 sm:space-x-12 md:space-x-16 ">
 
-
+        {/* Benefit 1 */}
+        <div className="flex items-start space-x-4">
+          {/* <span className="text-red-600 font-bold text-xl"></span> */}
+          <p className="text-xl sm:text-2xl text-red-700 ">
+            You’ll get all this with your subscription:          </p>
+        </div>
         {/* Benefit 1 */}
         <div className="flex items-start space-x-4">
           <span className="text-red-600 font-bold text-xl">1.</span>
           <p className="text-gray-700">
             How to secure your online wallet so it won’t get stolen (as it has happened many times).          </p>
         </div>
-        {/* Benefit 2 */}
 
+        {/* Benefit 2 */}
         <div className="flex items-start space-x-4">
           <span className="text-red-600 font-bold text-xl">2.</span>
           <p className="text-gray-700">
