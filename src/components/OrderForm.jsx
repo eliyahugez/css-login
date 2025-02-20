@@ -154,15 +154,21 @@ const OrderForm = ({ isActive, handleClick }) => {
                   <CreditCardIcon type="visa" format="flatRounded" width={100}
                     size={40}
                     className={`mx-auto mb-2 ${cardType === card ? 'text-blue-500' : 'text-gray-400'}`}
+
                   />
-                  {/* <VisaIcon />
-                  <MasterCardIcon />
-                  <AmericanExpressIcon /> */}
-                  {cardType === 'visa' && <VisaIcon />}
-                  {cardType === 'mastercard' && <MasterCardIcon />}
-                  {cardType === 'amex' && <AmericanExpressIcon />}
+
+
                   <span className={`text-sm ${cardType === card ? 'text-blue-500 font-medium' : 'text-gray-400'}`}>
                     {getCardDisplayName(card)}
+                    {card === 'visa' && <VisaIcon
+                      className={`mx-auto mb-2 ${cardType === card ? 'text-blue-500' : 'text-gray-400'}`}
+                    />}
+                    {card === 'mastercard' && <MasterCardIcon
+                      className={`mx-auto mb-2 ${cardType === card ? 'text-blue-500' : 'text-gray-400'}`}
+                    />}
+                    {card === 'amex' && <AmericanExpressIcon
+                      className={`mx-auto mb-2 ${cardType === card ? 'text-blue-500' : 'text-gray-400'}`}
+                    />}
                   </span>
                 </div>
               ))}
@@ -196,15 +202,40 @@ const OrderForm = ({ isActive, handleClick }) => {
 
           {/* Personal Details */}
           <div className="grid grid-cols-1 gap-6">
+
+            <label className="block text-sm font-medium text-gray-700 mb-2">Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+              <div
+                className='grid grid-cols-1 md:grid-cols-2 gap-4'
+              ><div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email:</label>
+                  <input
+                    type="text"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone:</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Address:</label>
