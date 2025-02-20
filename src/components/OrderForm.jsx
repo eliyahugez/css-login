@@ -15,12 +15,18 @@ const OrderForm = ({ isActive, handleClick }) => {
     name: '',
     address: '',
     city: '',
+    email: '',
+    phone: '',
     state: '',
     zip: ''
   });
 
   const hidden = isActive ? '' : 'hidden';
   const [cardType, setCardType] = useState('');
+
+  // classNames
+  const classFormInput = "w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+  const classFormLabel = "block text-sm font-medium text-gray-700 mb-2"
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -104,7 +110,7 @@ const OrderForm = ({ isActive, handleClick }) => {
 
           {/* Subscription Plans */}
           <div className="space-y-4">
-            <div className="border-2 border-gray-200 rounded-lg p-6 hover:border-red-500 transition-colors duration-200">
+            <div className="border-2 border-gray-200 rounded-lg p-6 hover:border-yellow-500 transition-colors duration-200">
               <label className="flex items-start space-x-4 cursor-pointer">
                 <input
                   type="radio"
@@ -121,7 +127,7 @@ const OrderForm = ({ isActive, handleClick }) => {
               </label>
             </div>
 
-            <div className="border-2 border-gray-200 rounded-lg p-6 hover:border-red-500 transition-colors duration-200">
+            <div className="border-2 border-gray-200 rounded-lg p-6 hover:border-yellow-500 transition-colors duration-200">
               <label className="flex items-start space-x-4 cursor-pointer">
                 <input
                   type="radio"
@@ -147,13 +153,13 @@ const OrderForm = ({ isActive, handleClick }) => {
                 <div
                   key={card}
                   className={`p-4 rounded-lg transition-all duration-200 text-center ${cardType === card
-                    ? 'bg-blue-100 border-2 border-blue-500 shadow-md'
+                    ? 'bg-blue-100 border-2 border-yellow-500 shadow-md'
                     : 'bg-white border-2 border-gray-200'
                     }`}
                 >
                   <CreditCardIcon type="visa" format="flatRounded" width={100}
                     size={40}
-                    className={`mx-auto mb-2 ${cardType === card ? 'text-blue-500' : 'text-gray-400'}`}
+                    className={`mx-auto mb-2 ${cardType === card ? 'text-yellow-500' : 'text-gray-400'}`}
 
                   />
 
@@ -176,24 +182,26 @@ const OrderForm = ({ isActive, handleClick }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Card #:</label>
+                <label className={classFormLabel}>Card #:</label>
                 <input
                   type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   name="cardNumber"
                   value={formData.cardNumber}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={classFormInput}
                   placeholder="XXXX XXXX XXXX XXXX"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Exp. Date:</label>
+                <label className={classFormLabel}>Exp. Date:</label>
                 <input
                   type="text"
                   name="expDate"
                   value={formData.expDate}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={classFormInput}
                   placeholder="MM/YY"
                 />
               </div>
@@ -202,80 +210,81 @@ const OrderForm = ({ isActive, handleClick }) => {
 
           {/* Personal Details */}
           <div className="grid grid-cols-1 gap-6">
-
-            <label className="block text-sm font-medium text-gray-700 mb-2">Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
+            <div>
+              <label className={classFormLabel}>Name:</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className={classFormInput}
+              />
+            </div>
 
             <div>
               <div
                 className='grid grid-cols-1 md:grid-cols-2 gap-4'
               ><div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email:</label>
+                  <label className={classFormLabel}>Email:</label>
                   <input
                     type="text"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={classFormInput}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone:</label>
+                  <label className={classFormLabel}>Phone:</label>
                   <input
                     type="text"
                     name="phone"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={classFormInput}
                   />
                 </div>
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Address:</label>
+              <label className={classFormLabel}>Address:</label>
               <input
                 type="text"
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={classFormInput}
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">City:</label>
+                <label className={classFormLabel}>City:</label>
                 <input
                   type="text"
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={classFormInput}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">State:</label>
+                <label className={classFormLabel}>State:</label>
                 <input
                   type="text"
                   name="state"
                   value={formData.state}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={classFormInput}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Zip:</label>
+                <label className={classFormLabel}>Zip:</label>
                 <input
                   type="text"
                   name="zip"
                   value={formData.zip}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={classFormInput}
                 />
               </div>
             </div>
