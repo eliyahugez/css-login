@@ -3,6 +3,7 @@ import AuthInputs from './components/AuthInputs.jsx';
 import Header from './components/Header.jsx';
 import LargeRedButton from './components/LargeRedButton.jsx';
 import OrderForm from './components/OrderForm.jsx';
+import PaymentForm from './components/PaymentForm.jsx';
 
 export default function App() {
 
@@ -31,6 +32,7 @@ export default function App() {
         handleClick={handleClick}
 
       />
+      <PaymentForm />
     </>
   );
 }

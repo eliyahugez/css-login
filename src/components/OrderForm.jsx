@@ -62,13 +62,13 @@ const OrderForm = ({ isActive, handleClick }) => {
   };
 
   return (
-    <div className={`min-h-screen ${hidden} backdrop-blur-xl fixed top-0 left-0 right-0 bottom-0 overflow-y-auto py-12 px-4 sm:px-6 lg:px-8`}>
+    <div className={`min-h-screen ${hidden} backdrop-blur-xl fixed top-0 left-0 right-0 bottom-0 overflow-y-auto py-12 px-4 sm:px-6 lg:px-8 z-40 `}>
       <SubscriptionBenefits handleClick={handleClick} isActive={isActive} />
-      <div className="max-w-3xl mx-auto shadow-xl rounded-2xl">
+      <div className="max-w-4xl min-w-screen mx-auto shadow-xl rounded-2xl">
         {/* Header with Image */}
         <div className="bg-gradient-to-r from-red-500 rounded-xl to-red-600 px-8 py-6 relative">
           <button
-            className="animate-spin text-white text-2xl absolute top-4 right-4"
+            className="hover:animate-spin text-white text-2xl absolute top-4 right-4"
             onClick={() => handleClick(isActive)}
           >
             <XIcon />
@@ -89,7 +89,7 @@ const OrderForm = ({ isActive, handleClick }) => {
         </div>
 
         {/* Form Content */}
-        <form onSubmit={handleSubmit} className={`px-8 py-6 bg-gradient-to-b from-amber-100 to-amber-300 space-y-8`}>
+        <form onSubmit={handleSubmit} className={`px-8 py-6 bg-gradient-to-b from-amber-100 to-amber-300 space-y-8 min-w-screen`}>
           {/* Intro Text */}
           <div className="text-center">
             <p className="text-lg">

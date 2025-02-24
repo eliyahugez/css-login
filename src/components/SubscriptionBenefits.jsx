@@ -5,7 +5,7 @@ const SubscriptionBenefits = ({ handleClick, isActive }) => {
   return (
     <div className="bg-sahara bg-gradient-to-b from-amber-100 to-amber-300 p-4 sm:p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
       <button
-        className="animate-spin text-red-600 text-2xl absolute top-8 right-8"
+        className="hover:animate-spin text-red-600 text-2xl absolute top-16 right-16"
         onClick={() => handleClick(isActive)}
       >
         <XIcon />
