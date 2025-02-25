@@ -64,7 +64,7 @@ const OrderForm = ({ isActive, handleClick }) => {
   return (
     <div className={`min-h-screen ${hidden} backdrop-blur-xl fixed top-0 left-0 right-0 bottom-0 overflow-y-auto py-12 px-4 sm:px-6 lg:px-8 z-40 `}>
       <SubscriptionBenefits handleClick={handleClick} isActive={isActive} />
-      <div className="max-w-4xl min-w-screen mx-auto shadow-xl rounded-2xl">
+      <div className="max-w-4xl min-w-screen mx-auto shadow-xl rounded-2xl relative">
         {/* Header with Image */}
         <div className="bg-gradient-to-r from-red-500 rounded-xl to-red-600 px-8 py-6 relative">
           <button
@@ -75,13 +75,7 @@ const OrderForm = ({ isActive, handleClick }) => {
           </button>
           <div className="text-center">
             {/* Placeholder for Image */}
-            {/* <div className="mb-6">
-              <img 
-                src="https://via.placeholder.com/800x400" 
-                alt="Q-Day Header" 
-                className="w-full h-auto rounded-lg"
-              />
-            </div> */}
+
             <h1 className="text-3xl font-bold text-white">
               Q-DAY ORDER FORM
             </h1>
@@ -111,18 +105,31 @@ const OrderForm = ({ isActive, handleClick }) => {
           {/* Subscription Plans */}
           <div className="space-y-4">
             <div className="border-2 border-gray-200 rounded-lg p-6 hover:border-yellow-500 transition-colors duration-200">
-              <label className="flex items-start space-x-4 cursor-pointer">
-                <input
-                  type="radio"
-                  name="plan"
-                  value="twoYear"
-                  onChange={handleInputChange}
-                  className="mt-1 w-4 h-4 text-blue-600"
-                />
-                <div className="flex-1">
-                  <span className="block text-xl font-semibold text-blue-600">SAVE 50%</span>
-                  <span className="text-gray-600">Two years for only $39 a month (reg. $79/mo.)</span>
-                  <span className="block mt-2 text-sm text-blue-500">Special Bonus – FREE hack-proof offline wallet (a $150 value)</span>
+              <label className="flex items-start justify-between space-x-4 cursor-pointer">
+                <div className="flex space-x-4">
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="twoYear"
+                    onChange={handleInputChange}
+                    className="mt-1 w-4 h-4 text-blue-600"
+                  />
+                  <div className="flex-1">
+                    <span className="block text-xl font-semibold text-blue-600">SAVE 50%</span>
+                    <span className="text-gray-600">Two years for only $39 a month (reg. $79/mo.)</span>
+                    <span className="block mt-2 text-sm text-blue-500">Special Bonus – FREE hack-proof offline wallet (a $150 value)</span>
+                    <p className="text-sm text-gray-600 mt-2 italic">
+                      Secure and manage your crypto and NFTs with Ledger's most popular wallet, Ledger Nano S Plus™.
+                      Review your transactions with ease and take control while on the move, all with uncompromising security.
+                    </p>
+                  </div>
+                </div>
+                <div className="w-24 flex-shrink-0">
+                  <img
+                    src="https://i.ibb.co/5XKksyTX/Whats-App-Image-2025-02-25-at-14-50-23-e5d7245f.jpg"
+                    alt="Ledger Nano S Plus"
+                    className="w-full h-auto rounded-xl object-contain"
+                  />
                 </div>
               </label>
             </div>
@@ -136,6 +143,7 @@ const OrderForm = ({ isActive, handleClick }) => {
                   onChange={handleInputChange}
                   className="mt-1 w-4 h-4 text-blue-600"
                 />
+
                 <div className="flex-1">
                   <span className="block text-xl font-semibold text-blue-600">SAVE 20%</span>
                   <span className="text-gray-600">One year for only $49 a month (reg. $60/mo.)</span>

@@ -137,6 +137,12 @@ const SubscriptionBenefits = ({ handleClick, isActive }) => {
             continuous releases of Bitcoins “forbidden secrets”, constant daily updates of news and
             trades on the coming Quantum Computer Hacks in both audio and written form          </p>
         </div>
+        {/* Plus */}
+        <div className="flex items-start space-x-4">
+          <span className="text-red-600 font-bold text-xl"></span>
+          <p className="text-gray-700">
+            Secure and manage your crypto and NFTs with Ledger’s most popular wallet, Ledger Nano S Plus™. Review your transactions with ease and take control while on the move, all with uncompromising security </p>
+        </div>
       </div>
     </div>
   );
