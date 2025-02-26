@@ -4,12 +4,14 @@ import React from 'react';
 const SubscriptionBenefits = ({ handleClick, isActive }) => {
   return (
     <div className="bg-sahara bg-gradient-to-b from-amber-100 to-amber-300 p-4 sm:p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
-      <button
-        className="hover:animate-spin text-red-600 text-2xl absolute top-16 right-16"
-        onClick={() => handleClick(isActive)}
-      >
-        <XIcon />
-      </button>
+      <div className="flex justify-end mb-4">
+        <button
+          className="hover:animate-spin hover:bg-amber-800 rounded-xl hover:text-amber-300 text-red-600 text-2xl"
+          onClick={() => handleClick(isActive)}
+        >
+          <XIcon />
+        </button>
+      </div>
       {/* Cover Image */}
       <div className="w-full flex justify-center mb-8">
         <img
