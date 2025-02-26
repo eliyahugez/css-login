@@ -118,10 +118,7 @@ const OrderForm = ({ isActive, handleClick }) => {
                     <span className="block text-xl font-semibold text-blue-600">SAVE 50%</span>
                     <span className="text-gray-600">Two years for only $39 a month (reg. $79/mo.)</span>
                     <span className="block mt-2 text-sm text-blue-500">Special Bonus – FREE hack-proof offline wallet (a $150 value)</span>
-                    <p className="text-sm text-gray-600 mt-2 italic">
-                      Secure and manage your crypto and NFTs with Ledger's most popular wallet, Ledger Nano S Plus™.
-                      Review your transactions with ease and take control while on the move, all with uncompromising security.
-                    </p>
+
                   </div>
                 </div>
                 <div className="w-24 flex-shrink-0">
