@@ -129,14 +129,14 @@ const SubscriptionBenefits = ({ handleClick, isActive }) => {
           <span className="text-red-600 font-bold text-xl">10.</span>
           <p className="text-gray-700">
             <span className="font-semibold"> </span>
-            Secure and manage your crypto and NFTs with Ledger’s most popular wallet, Ledger Nano S Plus™. Review your transactions with ease and take control while on the move, all with uncompromising security  (with a 2-year subscription).
+            Secure and manage your crypto and NFTs with Ledger’s most popular wallet, Ledger Nano S Plus™. Review your transactions with ease and take control while on the move, all with uncompromising security  (FREE with a 2-year subscription).
           </p>
         </div>
         {/* 11 */}
         <div className="flex items-start space-x-4">
           <span className="text-red-600 font-bold text-xl">11.</span>
           <p className="text-gray-700">
-            continuous releases of Bitcoins “forbidden secrets”, constant daily updates of news and
+            Continuous releases of Bitcoins “forbidden secrets”, constant daily updates of news and
             trades on the coming Quantum Computer Hacks in both audio and written form          </p>
         </div>
         {/* Plus */}
